@@ -1,0 +1,32 @@
+/**
+ Problem statement
+ Sam is making a forest visualizer. An N-dimensional forest is represented by the pattern of size NxN filled with ‘*’.
+ For every value of ‘N’, help sam to print the corresponding N-dimensional forest.
+ Example:
+ Input: ‘N’ = 3
+ Output: 
+ * * *
+ * * *
+ * * *
+
+ */
+
+const makeForest = function (n) {
+  let str = "";
+  for (let i = 0; i < n; i++) {
+    const forest = new Array(n).fill("*").join("");
+    str += forest + "\n";
+  }
+
+  return str.slice(0,str.length-1);
+}
+
+TIME COMPLEXITY -- O(N * N)
+SPACE COMPLEXITY -- O(N)
+console.log(makeForest(0))
+
+console.log(makeForest(3))
+console.log(makeForest(4))
+
+
+
