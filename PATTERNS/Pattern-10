@@ -1,0 +1,12 @@
+class Solution {
+    //Function to print the pattern.
+    printTriangle(N)
+    {
+        let t = N;
+        
+        while ( t > 0 ) {
+            const s = Array.from({length:t}, (_,i) => i+1);
+            console.log(s.join(" "));
+        }
+    }
+}
