@@ -1,0 +1,10 @@
+class Solution:
+    def printTriangle(self, N):
+        # Code here
+        for i in range(N - 1, -1, -1):
+            s = ""
+            for j in range(i, N - 1):
+                s += " "
+            for k in range(0, (i * 2) + 1):
+                s += "*"
+            print(s)
