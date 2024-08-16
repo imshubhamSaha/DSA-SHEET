@@ -1,0 +1,20 @@
+//User function Template for javascript
+/**
+ * @param {number} N
+ * @returns {number}
+*/
+
+class Solution {
+    //Function to print triangle pattern with N lines.
+    printTriangle(N) {
+        let temp = N;
+        let str = ""
+        while (temp > 0) {
+            const s = new Array(temp).fill("*");
+            str += s.join(" ") + "\n";
+            temp--;
+        }
+        
+        console.log(str.slice(0, -1));
+    }
+}
