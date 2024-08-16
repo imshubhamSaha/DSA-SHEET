@@ -1,0 +1,21 @@
+class Solution {
+/**
+* @param number n
+
+* @returns none
+*/
+    printTriangle(n) {
+        let idx = 0;
+        
+        while (idx < n) {
+            let str = "";
+            for (let i = idx; i < n-1; i++) str += " ";
+            
+            for (let j = 0; j <= idx * 2; j++) str += "*";
+            
+            console.log(str);
+            idx++;
+        }
+         
+    }
+}
