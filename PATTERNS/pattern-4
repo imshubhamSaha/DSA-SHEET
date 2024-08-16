@@ -1,0 +1,28 @@
+
+/**
+ * @param {number} n
+ */
+
+class Solution {
+    printPat(n) {
+        let temp = n;
+        const str  = [];
+        while (temp > 0) {
+            let times = n;
+           
+            while (times >= 1) {
+                let j = temp;
+                while (j >= 1) {
+                    str.push(times + " ");
+                    j--;
+                }
+                times--;
+            }
+            str.push("$");
+            temp--;
+        }
+        
+        console.log(str.join(""))
+        
+    }
+}
