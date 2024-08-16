@@ -1,0 +1,11 @@
+class Solution
+{
+    //Function to print the pattern.
+    printTriangle(N)
+    {
+        for (let i = 1; i <= N; i++) {
+            const s = new Array(i).fill(i);
+            console.log(s.join(" "))
+        }
+    }
+}
