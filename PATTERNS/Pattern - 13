@@ -1,0 +1,31 @@
+var makeDiamond = function (n) {
+  let str = "";
+
+  let idx = 0;
+  while ((idx++) < n) {
+    let spaces = n - 1 - (idx - 1);
+    
+    while (spaces-- > 0) str += " "; 
+    
+    let stars = (idx-1) * 2 + 1;
+
+    while (stars-- > 0) str += "*";
+    str += "\n";
+  }
+
+  idx = n-1;
+
+  while (idx-- >= 0) {
+    let spaces = n - 1 - (idx + 1);
+
+    while (spaces-- > 0) str += " ";
+
+    let stars = (idx +1) * 2 + 1;
+
+    while (stars-- > 0) str += "*";
+    str += "\n"
+  }
+  return str;
+};
+
+console.log(makeDiamond(3))
