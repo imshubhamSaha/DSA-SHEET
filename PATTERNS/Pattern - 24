@@ -1,0 +1,45 @@
+var crossBarfi = function(n) {
+  const result = [];
+  //UPPER HALF
+  let spacesLen = (2 * n) - 2;
+  for (let outer = 1; outer <= n; outer++) {
+    const str = [];
+    // PRINT STAR
+    for (let star = 0; star < outer; star++) str.push("*");
+    for (let space = 0; space < spacesLen; space++) str.push(" ");
+    for (let star = 0; star < outer; star++) str.push("*");
+    result.push(str.join(""));
+    spacesLen -= 2;
+  }
+
+  //LOWER HALF
+  spacesLen = 2;
+  for (let outer = n - 1; outer >=  1; outer--) {
+    const str = [];
+    // PRINT STAR
+    for (let star = 0; star < outer; star++) str.push("*")
+    for (let space = 0; space < spacesLen; space++) str.push(" ");
+    for (let star = 0; star < outer; star++) str.push("*")
+
+    result.push(str.join(""));
+    spacesLen += 2;
+  }
+
+  return result.join("\n");
+}
+
+console.log(crossBarfi(6));
+
+
+*          *
+**        **
+***      ***
+****    ****
+*****  *****
+************
+*****  *****
+****    ****
+***      ***
+**        **
+*          *
+ 
