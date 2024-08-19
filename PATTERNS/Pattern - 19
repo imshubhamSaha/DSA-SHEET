@@ -1,0 +1,28 @@
+var alphaPattern = function(n) {
+  const CAPITAL_ALPHABET = ["A", 'B', 'C', 'D','E', 'F', 'G', 'H', 'I','J','K','L','M','N','O','P','Q','R','S','T', 'U','V','W','X','Y','Z']
+  const res = [];
+  
+  for (let outer = n; outer >= 1; outer--) {
+    const str = [];
+    for (let digit = 0; digit < outer; digit++) str.push(CAPITAL_ALPHABET[digit]);
+    res.push(str.join(" "));
+  } 
+
+  return res.join("\n");
+}
+
+console.log(alphaPattern(6))
+
+
+A B C
+A B
+A
+
+Input Format: N = 6
+Result:   
+A B C D E F
+A B C D E 
+A B C D
+A B C
+A B
+A
