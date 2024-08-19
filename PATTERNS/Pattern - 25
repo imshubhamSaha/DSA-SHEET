@@ -1,0 +1,26 @@
+var hollowRectangle = function(n) {
+  const result = [];
+
+  for (let outer = 0; outer <  n; outer++) {
+    const str = [];
+    for (let inner = 0; inner < n; inner++) {
+      if (outer === 0 || inner === 0  || outer === n - 1 || inner === n - 1)
+        // PRINT STAR
+        str.push("*");
+      else str.push(" ");
+    }
+    result.push(str.join(""));
+  }
+  
+  return result.join("\n");
+}
+
+console.log(hollowRectangle(6));
+
+
+******
+*    *
+*    *
+*    *
+*    *
+******
