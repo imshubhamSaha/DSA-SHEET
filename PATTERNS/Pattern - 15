@@ -1,0 +1,16 @@
+var binaryPyramid = function(n) {
+  const res = [];
+
+  for (let i = 1; i <= n; i++) {
+    let start = i % 2 === 0 ? 0 : 1;
+    const str = [];
+    for (let j = 1; j <= i; j++) {
+      str.push(start);
+      start = 1 - start;
+    }
+
+    res.push(str.join(""));
+  }
+
+  return res.join("\n");
+}
