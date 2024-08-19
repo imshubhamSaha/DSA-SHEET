@@ -1,0 +1,14 @@
+var makePattern = function(n) {
+  const res = [];
+
+  for (let outer = 1; outer <= n; outer++) {
+    const str = [];
+    for (let digit = 0; digit < outer; digit++) str.push(digit+1);
+    for (let space = 0; space < (2 * (n - outer)); space++) str.push(" ");
+    for (let revdigit = outer; revdigit > 0; revdigit--) str.push(revdigit);
+
+    res.push(str.join(""));
+  } 
+
+  return res.join("\n");
+}
