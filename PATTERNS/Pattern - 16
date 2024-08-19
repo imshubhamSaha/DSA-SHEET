@@ -1,0 +1,20 @@
+
+var makePattern = function(n) {
+  const res = [];
+  let start = 1;
+  for (let outer = 1; outer <= n; outer++) {
+    const str = [];
+    for (let digit = 0; digit < outer; digit++) str.push(start++);
+    res.push(str.join(" "));
+  } 
+
+  return res.join("\n");
+}
+
+console.log(makePattern(5))
+
+1
+2 3
+4 5 6
+7 8 9 10
+11 12 13 14 15
