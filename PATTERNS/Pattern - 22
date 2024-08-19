@@ -1,0 +1,23 @@
+var charPyramid = function(n) {
+  const result = [];
+  const CAPITAL_APLPHABET = [ "A", "B", "C","D","E", "F", "G", "H", "I", "J","K", "L", "M", "N", "O", "P", "Q", "R", "S","T","U", "V", "W", "X", "Y", "Z"];
+  for (let outer = 1; outer <= n; outer++) {
+    let str = [];
+    
+    for (let char = n - outer; char < n ; char++) str.push(CAPITAL_APLPHABET[char]);
+    
+    result.push(str.join(" "));
+  }
+
+  return result.join('\n')
+}
+
+console.log(charPyramid(6))
+
+
+E F
+D E F
+C D E F
+B C D E F
+A B C D E F
+ 
