@@ -23,20 +23,11 @@ Since the given number N = 12 is represented as 00000000000000000000000000001100
 */
 
 var reverseBits = function (n) {
-  let rev_num = "";
-  while (n > 0) {
-    rev_num += n & 1;
-    n = Math.floor(n / 2);
-  }
-  let bitsize = 32 - rev_num.length;
   let res = 0;
-
-  for (let i = rev_num.length - 1; i >= 0; i--) {
-    if (rev_num[i] === "1") {
-      res += 2 ** bitsize;
-    }
-    bitsize++;
+  for (let i = 0; i < 32; i++) {
+    let bit = (n >> i) & 1;
+    res = res | (bit << (31 - i));
   }
   return res;
 };
-console.log(reverseBits(12));
+console.log(reverseBits(0));
