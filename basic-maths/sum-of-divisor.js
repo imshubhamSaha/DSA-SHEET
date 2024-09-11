@@ -7,15 +7,13 @@ var sumOfDivisor = function (n) {
   let sum = 0;
 
   for (let i = 1; i <= n; i++) {
-    for (let j = 1; j <= i; j++) {
-      if (i % j === 0) sum += j;
-    }
+    sum += i * Math.floor(n / i);
   }
 
   return sum;
 };
-console.log(sumOfDivisor(4));
+console.log(sumOfDivisor(5));
 /**
- * Time Complexity --> O(n * n)
+ * Time Complexity --> O(n)
  * Space Complexity --> constant
  */
