@@ -27,4 +27,4 @@ var checkArmstrong = function (n) {
   return res === n;
 };
 
-console.log(checkArmstrong(371));
+console.log(checkArmstrong(157));

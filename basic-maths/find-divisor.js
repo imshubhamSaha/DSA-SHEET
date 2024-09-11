@@ -16,7 +16,7 @@ Therefore our answer is sumOfDivisors(1) + sumOfDivisors(2) + sumOfDivisors(3) +
 */
 var sumOfDivisors = function (n) {
   let sum = 0;
-  for (let i = 1; i <= 36; i++) {
+  for (let i = 1; i <= n; i++) {
     if (n % i === 0) sum += i;
   }
 
@@ -26,13 +26,14 @@ console.log(sumOfDivisors(36));
 //Time complexity --> O(n)
 
 var sumDivisor = function (n) {
-  let sum = 0;
-  for (let i = 1; i * i <= n; i++) {
-    if (n % i === 0) sum += i;
+  let totalSum = 0;
 
-    if (n % (n / i) === 0 && n / i !== i) sum += n / i;
+  for (let i = 1; i * i <= n; i++) {
+    if (n % i === 0) totalSum += i;
+    if (n % (n / i) === 0 && n / i !== i) totalSum += n / i;
   }
-  return sum;
+
+  return totalSum;
 };
 
 console.log(sumDivisor(36));
