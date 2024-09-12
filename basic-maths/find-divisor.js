@@ -38,3 +38,18 @@ var sumDivisor = function (n) {
 
 console.log(sumDivisor(36));
 // Time complexity --> O(sqrt(n));
+
+var Divisor = function (n) {
+  const div = [];
+
+  for (let i = 1; i * i <= n; i++) {
+    if (n % i === 0) {
+      div.push(i);
+      if (n / i !== i) div.push(n / i);
+    }
+  }
+
+  return div.sort((a, b) => a - b);
+};
+
+console.log(Divisor(36));
