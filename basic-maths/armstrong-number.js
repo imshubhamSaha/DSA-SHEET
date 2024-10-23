@@ -8,23 +8,27 @@ An Armstrong number is a number (with 'k' digits) such that the sum of its digit
  */
 
 var checkArmstrong = function (n) {
-  if (n < 0) return false;
-
   let temp = n;
-  let res = 0;
-  let digit = 0;
-  while (temp) {
-    digit++;
-    temp = Math.floor(temp / 10);
-  }
+  let places = 0;
 
-  temp = n;
   while (temp > 0) {
-    res += (temp % 10) ** digit;
+    places++;
     temp = Math.floor(temp / 10);
   }
 
-  return res === n;
+  let armNum = 0;
+  temp = n;
+
+  while (temp > 0) {
+    armNum += (temp % 10) ** places;
+    temp = Math.floor(temp / 10);
+  }
+
+  return armNum === n;
 };
 
-console.log(checkArmstrong(157));
+console.log(checkArmstrong(357));
+/**
+ * Time Complexity --> log10(n) + log10(n)
+ * Space Complexity --> constant
+ */
